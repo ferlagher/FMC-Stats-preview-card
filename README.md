@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 
-- Live Site URL: 
+- Solution URL: https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62/hub/responsive-component-with-sass-ODSiFwENPu
+- Live Site URL: https://ferlagher.github.io/FMC-Stats-preview-card/
 
 ## My process
 
