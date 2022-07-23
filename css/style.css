@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, b {
+  margin-bottom: 0.75em;
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.625rem, 2.5vw, 2.1875rem);
+}
+h1 span, b span {
+  color: hsl(277deg, 64%, 61%);
+}
+
+b {
+  font-size: 1.5rem;
+}
+
+p {
+  color: hsla(0deg, 0%, 100%, 0.75);
+  line-height: 1.75em;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 200;
+  font-size: 0.9375rem;
+}
+
+li span {
+  color: hsla(0deg, 0%, 100%, 0.6);
+  letter-spacing: 0.1em;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 200;
+  font-variant: small-caps;
+}
+
+a {
+  color: hsl(277deg, 64%, 61%);
+  text-decoration: none;
+}
+a:visited {
+  color: hsl(277deg, 64%, 61%);
+}
+
+body {
+  background-color: hsl(233deg, 47%, 7%);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto max-content;
+}
+body main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body footer {
+  color: hsla(0deg, 0%, 100%, 0.6);
+  text-align: center;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 200;
+  font-size: 0.9375rem;
+}
+
+.card {
+  background-color: hsl(244deg, 38%, 16%);
+  width: clamp(min(100%, 327px), 77.1vw, 1110px);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-between;
+  gap: 4.5%;
+}
+.card picture {
+  background-color: hsl(277deg, 64%, 61%);
+}
+.card picture source, .card picture img {
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card picture img {
+  height: 100%;
+}
+.card__body {
+  width: min-content;
+  flex-grow: 1;
+  padding: clamp(30px, 6.5%, 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card__body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.35em;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 6.7vw;
+    flex-direction: column;
+  }
+  .card__body {
+    width: 100%;
+    text-align: center;
+  }
+  .card__body ul {
+    padding-top: clamp(30px, 6.5%, 72px);
+  }
+}
+@media (max-width: 376px) {
+  .card .card__body ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.18em;
+  }
+}/*# sourceMappingURL=style.css.map */

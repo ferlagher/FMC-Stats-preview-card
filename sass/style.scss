@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@200&display=swap');
+
+$color-dark-blue: hsl(233, 47%, 7%);
+$color-desaturated-blue: hsl(244, 38%, 16%);
+$color-violet: hsl(277, 64%, 61%);
+$color-white: hsl(0, 0%, 100%);
+$color-white-75: hsla(0, 0%, 100%, 0.75);
+$color-white-60: hsla(0, 0%, 100%, 0.6);
+
+$font-family-heading: 'Inter', sans-serif;
+$font-family-body: 'Lexend Deca', sans-serif;
+
+$font-weight-bold: 700;
+$font-weight-xlight: 200;
+
+$font-size-lg: clamp(calc(26rem / 16), 2.5vw, calc(35rem / 16));
+$font-size-md: calc(24rem / 16);
+$font-size-sm: calc(15rem / 16);
+
+$card-width: clamp(min(100%, 327px), 77.1vw, 1110px);
+
+$padding-card-body: clamp(30px, 6.5%, 72px);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, b {
+    margin-bottom: 0.75em;
+    color: $color-white;
+    font: {
+        family: $font-family-heading;
+        weight: $font-weight-bold;
+        size: $font-size-lg;
+    }
+    span {
+        color: $color-violet;
+    }
+}
+
+b {
+    font-size: $font-size-md;
+}
+
+p {
+    color: $color-white-75;
+    line-height: 1.75em;
+    font: {
+        family: $font-family-body;
+        weight: $font-weight-xlight;
+        size: $font-size-sm;
+    }
+}
+
+li
+    span {
+        color: $color-white-60;
+        letter-spacing: 0.1em;
+        font: {
+            family: $font-family-body;
+            weight: $font-weight-xlight;
+            variant: small-caps;
+        }
+}
+
+a {
+    color: $color-violet;
+    text-decoration: none;
+    &:visited {
+        color: $color-violet;
+    }
+}
+
+body {
+    background-color: $color-dark-blue;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto max-content;
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer {
+        color: $color-white-60;
+        text-align: center;
+        font: {
+            family: $font-family-body;
+            weight: $font-weight-xlight;
+            size: $font-size-sm;
+        }
+    }
+}
+
+.card {
+    background-color: $color-desaturated-blue;
+    width: $card-width;
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    gap: 4.5%;
+    picture {
+        background-color: $color-violet;
+        source, img {
+            object-fit: cover;
+            mix-blend-mode: multiply;
+            opacity: 0.8;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        img {
+            height: 100%;
+        }
+    }
+    &__body {
+        width: min-content;
+        flex-grow: 1;
+        padding: $padding-card-body;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0.35em;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin: 6.7vw;
+        flex-direction: column;
+        &__body {
+            width: 100%;
+            text-align: center;
+            ul {
+                padding-top: $padding-card-body;
+            }
+        }
+    }
+}
+
+@media (max-width: 376px) {
+    .card {
+        .card__body {
+            ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 2.18em;
+            }
+        }
+    }
+}
